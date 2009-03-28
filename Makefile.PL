@@ -1,7 +1,9 @@
 use inc::Module::Install;
 # Define metadata
 name 'Vim-Snippet-Converter';
+author 'Yo-An Lin <cornelius.howl {at} gmail.com>';
 all_from 'lib/Vim/Snippet/Converter.pm';
+license 'perl';
 
 # Specific dependencies
 requires 'Test::More' => 0;
