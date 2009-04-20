@@ -1,4 +1,3 @@
-
 ;pod
 =pod <<POD>>
 <<>>
@@ -46,6 +45,18 @@
 <<>>
 ;end
 
+;b
+B<<<TEXT>>><<>>
+;end
 
+;l
+L<<<LINK>>><<>>
+;end
 
+;i
+I<<<ITALIC>>><<>>
+;end
 
+;c
+I<<<CODE>>><<>>
+;end
