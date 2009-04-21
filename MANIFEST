@@ -14,4 +14,5 @@ t/boilerplate.t
 t/pod.t
 snippets/jifty.snt
 snippets/perl_m.snt
+snippets/pod.snt
 snippets/php.snt

@@ -10,11 +10,11 @@ Vim::Snippet::Converter - A Template Converter for Slippery Snippet Vim Plugin
 
 =head1 VERSION
 
-Version 0.075
+Version 0.08
 
 =cut
 
-our $VERSION = '0.075';
+our $VERSION = '0.08';
 
 =head1 SYNOPSIS
 

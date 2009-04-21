@@ -69,8 +69,8 @@ if( $opt_install_to ) {
         open my $fh1, "<" , $opt_install_to;
         my @lines = <$fh1>;
         my $i = 0;
-        my $idx_start = 0;
-        my $idx_end   = 0;
+        my $idx_start = -1;
+        my $idx_end   = -1;
         foreach my $line ( @lines ) {
             $idx_start = $i  if ( $line =~ m{\Q"=====SNIPPET START:$src_filename} );
             $idx_end = $i    if ( $line =~ m{\Q"=====SNIPPET END:$src_filename} );
@@ -79,7 +79,7 @@ if( $opt_install_to ) {
         close $fh1 ;
 
         # splice 
-        if( $idx_start > 0 ) {
+        if( $idx_start > -1 ) {
             print STDERR "Found previous install: $idx_start-$idx_end\n";
             splice @lines,$idx_start,$idx_end - $idx_start + 1;
 
