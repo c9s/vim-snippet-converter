@@ -78,6 +78,7 @@ when you want to call the keyword completion , just press C<Ctrl-X Ctrl-K> in In
 
 =head1 TEMPLATE FORMAT
 
+    # comments
     ;sub
     sub <<function>> ( <<prototype>> ) {
         my <<>> = <<>>;
@@ -118,14 +119,16 @@ sub _gen_snippet {
     my $buf  = shift;
 
     # strip comment
-    $buf =~ s/^#.*//g;
+    return $buf if( $buf =~ s/^#/"/ );
 
     # place holder
+    my $space = ' ' x 4;
     $buf =~ s{"}{\\"}g;
     $buf =~ s{<<>>}{".st.et."}g;
     $buf =~ s{<<(.+?)>>}{".st."$1".et."}g;
     $buf =~ s{\n}{<CR>}g;
-    $buf =~ s{\t}{<TAB>}g;
+    $buf =~ s{\t}{<Tab>}g;
+    $buf =~ s{$space}{<Tab>}g;
     return $buf;
 }
 
