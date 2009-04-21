@@ -70,7 +70,7 @@ save triggers into vim completion file:
 
     $ scc -s perl.snt -c vim_completion
 
-append the below setting to your .vimrc , it is located in your home directory.
+append the below setting to your F<.vimrc> , it is located in your home directory.
 
     set dictionary+=/path/to/vim_completion
 
@@ -86,9 +86,15 @@ when you want to call the keyword completion , just press C<Ctrl-X Ctrl-K> in In
     }
     ;end
 
-'sub' is a trigger name , when you press <Tab> , the trigger will be replaced with the template.
+C<sub> is a trigger name , when you press C<E<lt>TabE<gt>> , the trigger will be replaced with the template.
 
-<<function>> is called Place Holder , when you press <Tab> again , curosr will jump to the next position to let you enter some text.
+C<E<lt>E<lt>functionE<gt>E<gt>> is called Place Holder , when you press
+C<E<lt>TabE<gt>> again , curosr will jump to the next position to let you enter
+some text.
+
+=head1 FUNCTIONS
+
+=head2 new
 
 =cut
 
@@ -97,12 +103,18 @@ sub new {
     return bless {} , $class;
 }
 
+=head2 convert
+
+=cut
 
 sub convert {
     my ( $self , $in , $out ) = @_;
     $self->parse( $in , $out );
 }
 
+=head2 _gen_trigger
+
+=cut
 
 sub _gen_trigger {
     my $self = shift;
@@ -113,6 +125,10 @@ sub _gen_trigger {
     $output .= $snippet_code . "\"\n";
     return $output;
 }
+
+=head2 _gen_snippet
+
+=cut
 
 sub _gen_snippet {
     my $self = shift;
@@ -131,6 +147,10 @@ sub _gen_snippet {
     $buf =~ s{$space}{<Tab>}g;
     return $buf;
 }
+
+=head2 parse
+
+=cut
 
 sub parse {
     my ( $self , $in , $out ) = @_;
@@ -161,6 +181,10 @@ sub parse {
         }
     }
 }
+
+=head2 gen_header 
+
+=cut
 
 sub gen_header {
 	return <<EOF;
@@ -195,7 +219,7 @@ You can find documentation for this module with the perldoc command.
 
 You can also look for information at:
 
-=over 6
+=over 4
 
 =item * Vim
 
