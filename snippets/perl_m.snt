@@ -1,15 +1,68 @@
 # vim:et:
 # comments here
+;md5
+use Digest::MD5 qw(md5 md5_hex md5_base64);
+<<>>
+;end
+
+;perl
+\#\!/usr/bin/env perl
+;end
+
+;from_to
+use Encode qw(from_to);
+my $<<Var>> = from_to( $<<VarFrom>> , '<<EncodeFrom>>' , '<<EncodeTo>>'  );
+<<>>
+;end
+
+;encode
+use Encode qw(encode);
+my $<<OCTETS>> = encode("<<ENCODE>>", $<<STRING>>);
+<<>>
+;end
+
+;temp
+use File::Temp;
+my $<<VarName>> = File::Temp->new( SUFFIX => '<<SUFFIX>>' , UNLINK => '<<UNLINK>>' );
+;end
+
+;us
+use strict;
+<<>>
+;end
+
+;uw
+use warnings;
+<<>>
+;end
+
+;s
+sub <<FUNC>> {
+my <<>>;
+<<>>
+}
+;end
+
+;pkg
+package <<NAME>>;
+<<>>
+;end
 
 ;dp
 use Data::Dumper; warn Dumper( <<Var>> );
+;end
+
+;poe
+use POE;
+POE::Session->create( inline_states => { } );
+$poe_kernel->run();
 ;end
 
 ;getopt
 use Getopt::Long;
 my ( <<Variables>> );
 GetOptions(
-    <<OptionName>> => <<Variable>>,
+    '<<OptionName>>' => \$<<VariableName>>,
     <<>>
 );
 ;end
@@ -43,4 +96,7 @@ my $cache = Cache::File->new(
     lock_level => Cache::File::<<LOCK_LOCAL>>(),
     default_expires => '<<SEC>> sec' );
 ;end
+
+
+
 
