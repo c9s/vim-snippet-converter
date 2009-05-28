@@ -1,5 +1,10 @@
 # vim:et:
 # comments here
+;510
+use feature ':5.10';
+<<>>
+;end
+
 ;md5
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 <<>>
