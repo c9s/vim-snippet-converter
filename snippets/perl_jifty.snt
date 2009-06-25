@@ -1,9 +1,15 @@
+
+;superuser
+<<APP>>::CurrentUser->superuser <<>>
+;end
+
 ;jifty
 use warnings;
 use strict;
 use lib 'lib';
 use Jifty::Everything;
 BEGIN { Jifty->new() }
+<<>>
 ;end
 
 ;div
