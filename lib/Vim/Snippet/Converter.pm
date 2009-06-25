@@ -10,11 +10,11 @@ Vim::Snippet::Converter - A Template Converter for Slippery Snippet Vim Plugin
 
 =head1 VERSION
 
-Version 0.08
+Version 0.082
 
 =cut
 
-our $VERSION = '0.08';
+our $VERSION = '0.082';
 
 =head1 SYNOPSIS
 
@@ -143,6 +143,7 @@ sub _gen_snippet {
     $buf =~ s{<<>>}{".st.et."}g;
     $buf =~ s{<<(.+?)>>}{".st."$1".et."}g;
     $buf =~ s{\n}{<CR>}g;
+    # $buf =~ s{\t}{$space}g;
     $buf =~ s{\t}{<Tab>}g;
     $buf =~ s{$space}{<Tab>}g;
     return $buf;

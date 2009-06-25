@@ -1,30 +1,80 @@
+;jifty
+use warnings;
+use strict;
+use lib 'lib';
+use Jifty::Everything;
+BEGIN { Jifty->new() }
+;end
+
+;div
+div { { <<Properties>> };
+    <<Stats>>
+};
+;end
+
+;model
+<<APP>>::Model::<<Model>>->new( current_user => <<>> );
+;end
+
+;span
+span { { <<Properties>> };
+    <<Stats>>
+};
+;end
+
 ;jfx
 use JiftyX::ModelHelpers;
 <<Object>> = M('<<Model>>')-><<Action>>( <<Arguments>> );
 <<>>
 ;end
 
-;disp
-<<Dispatch>> <<Ruels>> => sub {
-    <<>>
+;o
+outs <<STRING>> ;
+;end
+
+;on
+on <<Rules>> => run {
+<<>>
 };
 ;end
 
+;before
+before <<Rules>> => run {
+<<>>
+};
+;end
+
+;column
+column <<COLUMN>> =>
+    type is '<<TYPE>>',
+label is _('<<LABEL>>');
+;end
+
+;param
+param <<PARAM>> =>
+    type is '<<TYPE>>';
+<<>>
+;end
+
+;tpl
+template '<<Template>>' => sub {
+<<>>
+};
+;end
 
 ;tplp
 template '<<Name>>' => page { <<MetaData>> } 
 content {
-    <<>>
+<<>>
 };
+;end
 
-;tpl
-template '<<Template>>' => sub {
-    <<>>
-};
+;render_action
+render_action( <<ACTION>> , [ qw( <<FIELDS>> ) ]  , { <<OPTIONS>>  } );
 ;end
 
 ;script
 script { attr { type is 'text/javascript' }
-    outs_raw( qq|<<CODE>>|);
+outs_raw( qq|<<CODE>>|);
 }; 
 ;end

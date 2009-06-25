@@ -14,6 +14,18 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 \#\!/usr/bin/env perl
 ;end
 
+;fpod
+=head2 <<FUNCTION>> ( <<PARAMS>> )
+
+ARGUMENTS:
+<<PARAM>>: <<TYPE>>
+
+RETURN:
+<<RETURN>>
+
+=cut
+;end
+
 ;from_to
 use Encode qw(from_to);
 my $<<Var>> = from_to( $<<VarFrom>> , '<<EncodeFrom>>' , '<<EncodeTo>>'  );

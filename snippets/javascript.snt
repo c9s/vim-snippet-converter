@@ -7,3 +7,12 @@
 ;ext
 Ext.extend( <<CLASS>> , <<INHERIT>> , { <<>> } );
 ;end
+
+;console
+console.log( <<OBJECT>> );
+;end
+
+;a
+alert( <<OBJECT>> );
+;end
+
