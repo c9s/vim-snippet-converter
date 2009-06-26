@@ -84,3 +84,18 @@ script { attr { type is 'text/javascript' }
 outs_raw( qq|<<CODE>>|);
 }; 
 ;end
+
+;info
+Jifty->log->info( "<<Message>>" <<>> );
+<<>>
+;end
+
+;warn
+Jifty->log->warn( "<<Warnings>>" <<>> );
+<<>>
+;end
+
+;error
+Jifty->log->error( "<<Error>>" <<>> );
+<<>>
+;end
