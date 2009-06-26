@@ -86,16 +86,16 @@ outs_raw( qq|<<CODE>>|);
 ;end
 
 ;info
-Jifty->log->info( "<<Message>>" <<>> );
+Jifty->log->info( <<Message>>  );
 <<>>
 ;end
 
 ;warn
-Jifty->log->warn( "<<Warnings>>" <<>> );
+Jifty->log->warn( <<Warnings>>  );
 <<>>
 ;end
 
 ;error
-Jifty->log->error( "<<Error>>" <<>> );
+Jifty->log->error( <<Error>>  );
 <<>>
 ;end
