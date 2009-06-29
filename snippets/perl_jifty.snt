@@ -1,4 +1,9 @@
 
+
+;alias
+alias <<MyAPP>>::View::<<View>> under <<FragmentPath>>;
+;end
+
 ;superuser
 <<APP>>::CurrentUser->superuser <<>>
 ;end
@@ -86,16 +91,13 @@ outs_raw( qq|<<CODE>>|);
 ;end
 
 ;info
-Jifty->log->info( <<Message>>  );
-<<>>
+Jifty->log->info( <<MESSAGE>>  );
 ;end
 
 ;warn
-Jifty->log->warn( <<Warnings>>  );
-<<>>
+Jifty->log->warn( <<WARNINGS>>  );
 ;end
 
 ;error
-Jifty->log->error( <<Error>>  );
-<<>>
+Jifty->log->error( <<ERROR>>  );
 ;end
